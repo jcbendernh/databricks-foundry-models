@@ -18,23 +18,6 @@ Workaround for environments where Databricks Model Serving cannot resolve Key Va
 Prerequisite:
 An Azure Service Principal created that must have the **Cognitive Services OpenAI User** RBAC role on the Azure AI Foundry resource.
 
-```mermaid
-sequenceDiagram
-    participant NB as Databricks Notebook
-    participant KV as Azure Key Vault
-    participant AAD as Microsoft Entra ID
-    participant Foundry as Azure AI Foundry
-
-    NB->>KV: Retrieve SPTenantID, SPDatabricksAppID, SPDatabricksKey
-    KV-->>NB: Service Principal credentials
-    NB->>AAD: POST /oauth2/v2.0/token (client_credentials, cognitiveservices scope)
-    AAD-->>NB: Access Token (AAD Bearer Token)
-    NB->>Foundry: AzureOpenAI chat.completions.create() with AAD token
-    Foundry-->>NB: Model response
-    NB->>NB: display(response)
-```
-
-
 ### 2) Register Foundry Model - API/Resource Key
 This notebook registers an Azure AI Foundry deployment as a Databricks external model serving endpoint using the MLflow deployments client (`mlflow.deployments`).
 
@@ -55,28 +38,6 @@ Prerequisites:
 [Deploy Microsoft Foundry Models in the Foundry portal](https://learn.microsoft.com/en-us/azure/foundry/foundry-models/how-to/deploy-foundry-models)
 - API key authentication enabled in Azure AI Foundry.<BR>
 [Authenticate with a Foundry resource key](https://learn.microsoft.com/en-us/azure/ai-services/authentication#authenticate-with-a-foundry-resource-key)
-
-```mermaid
-flowchart TD
-    A([Start]) --> B[Step 1: Create External Model Endpoint\nmlflow.deployments.create_endpoint]
-    B --> C{Need to update config?}
-    C -- Yes --> D[Delete endpoint\nclient.delete_endpoint]
-    D --> B
-    C -- No --> E[Step 2: Verify Endpoint\nclient.get_endpoint → state: READY]
-    E --> F[Step 3: Query Endpoint\nSELECT ai_query endpoint_name, prompt via SQL]
-    F --> G([Model Response Returned])
-
-    subgraph Secrets
-        S1["Databricks-backed secret scope\n(foundry-creds/foundry_api_key)"]
-    end
-
-    subgraph Foundry Config
-        FC["openai_api_type: azure\nDeployment name, endpoint URL, API version"]
-    end
-
-    B --> S1
-    B --> FC
-```
 
 ## Getting Started
 1. Import these notebooks into your Databricks workspace using Databricks Git folders.  Clone this repository to your GitHub account and add it in Databricks via Git folders. For details, see [Azure Databricks Git folders](https://learn.microsoft.com/en-us/azure/databricks/repos/).
