@@ -24,9 +24,9 @@ This notebook registers an Azure AI Foundry deployment as a Databricks external 
 Authentication uses an Azure API key stored in a Databricks-backed secret scope. This is required because Model Serving cannot authenticate an Azure Service Principal in this scenario.
 
 The notebook covers three steps:
-1. Creates the endpoint.
+1. Creates the endpoint.<BR>When completed, you will see the model name listed in the Serving Endpoints within Azure Databricks.
 2. Verifies the endpoint.
-3. Validate the endpoint with a sample `ai_query()` SQL call.
+3. Validates the endpoint with a sample `ai_query()` SQL call.
 
 A utility cell is also included to delete and recreate the endpoint when configuration updates are needed.
 
