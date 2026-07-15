@@ -24,7 +24,8 @@ This notebook registers an Azure AI Foundry deployment as a Databricks external 
 Authentication uses an Azure Foundry Resource key stored in a Databricks-backed secret scope. This is required because Model Serving cannot authenticate an Azure Service Principal in this scenario.
 
 The notebook covers three steps:
-1. Creates the endpoint.<BR>When completed, you will see the model name in the Serving Endpoints listing within Azure Databricks.
+1. Creates the endpoint.<BR>When completed, you will see the model name in the Serving Endpoints listing within Azure Databricks.<BR>
+[Create custom model serving endpoints](https://learn.microsoft.com/en-us/azure/databricks/machine-learning/model-serving/create-manage-serving-endpoints)
 2. Verifies the endpoint.
 3. Validates the endpoint with a sample `ai_query()` SQL call.
 
@@ -43,6 +44,6 @@ Prerequisites:
 2. Update the notebook settings with your own deployed model details (deployment name, endpoint, API version, and authentication values).
 
 ## Example Model in This Repo
-The examples were originally authored using a the `gpt-5.6-luna` deployed model within AI Foundry.
+The examples were originally authored using a `gpt-5.6-luna` deployed model within AI Foundry.
 
 You should deploy a model in your own Azure AI Foundry project and replace the sample values with your environment-specific details.
