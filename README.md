@@ -18,6 +18,23 @@ Workaround for environments where Databricks Model Serving cannot resolve Key Va
 Prerequisite:
 An Azure Service Principal created that must have the **Cognitive Services OpenAI User** RBAC role on the Azure AI Foundry resource.
 
+```mermaid
+sequenceDiagram
+    participant NB as Databricks Notebook
+    participant KV as Azure Key Vault
+    participant AAD as Microsoft Entra ID
+    participant Foundry as Azure AI Foundry
+
+    NB->>KV: Retrieve SPTenantID, SPDatabricksAppID, SPDatabricksKey
+    KV-->>NB: Service Principal credentials
+    NB->>AAD: POST /oauth2/v2.0/token (client_credentials, cognitiveservices scope)
+    AAD-->>NB: Access Token (AAD Bearer Token)
+    NB->>Foundry: AzureOpenAI chat.completions.create() with AAD token
+    Foundry-->>NB: Model response
+    NB->>NB: display(response)
+```
+
+
 ### 2) Register Foundry Model - API/Resource Key
 This notebook registers an Azure AI Foundry deployment as a Databricks external model serving endpoint using the MLflow deployments client (`mlflow.deployments`).
 
