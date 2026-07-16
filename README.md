@@ -25,7 +25,7 @@ Authentication uses an Azure Foundry Resource key stored in a Databricks-backed 
 
 The notebook covers three steps:
 1. Creates the endpoint.<BR>When completed, you will see the model name in the Serving Endpoints listing within Azure Databricks.<BR>
-[Create custom model serving endpoints](https://learn.microsoft.com/en-us/azure/databricks/machine-learning/model-serving/create-manage-serving-endpoints)
+For more on this topic, check out [Create custom model serving endpoints](https://learn.microsoft.com/en-us/azure/databricks/machine-learning/model-serving/create-manage-serving-endpoints)
 2. Verifies the endpoint.
 3. Validates the endpoint with a sample `ai_query()` SQL call.
 
@@ -33,11 +33,11 @@ A utility cell is also included to delete and recreate the endpoint when configu
 
 Prerequisites:
 - A Databricks-backed secret scope that contains the Foundry API key.<BR>
-[Create a Databricks-backed secret scope](https://learn.microsoft.com/en-us/azure/databricks/security/secrets/#create-a-databricks-backed-secret-scope)
+For more on this topic, check out [Create a Databricks-backed secret scope](https://learn.microsoft.com/en-us/azure/databricks/security/secrets/#create-a-databricks-backed-secret-scope)
 - A deployed model in Azure AI Foundry with a known deployment name and API version.<BR>
-[Deploy Microsoft Foundry Models in the Foundry portal](https://learn.microsoft.com/en-us/azure/foundry/foundry-models/how-to/deploy-foundry-models)
+For more on this topic, check out [Deploy Microsoft Foundry Models in the Foundry portal](https://learn.microsoft.com/en-us/azure/foundry/foundry-models/how-to/deploy-foundry-models)
 - API key authentication enabled in Azure AI Foundry.<BR>
-[Authenticate with a Foundry resource key](https://learn.microsoft.com/en-us/azure/ai-services/authentication#authenticate-with-a-foundry-resource-key)
+For more on this topic, check out [Authenticate with a Foundry resource key](https://learn.microsoft.com/en-us/azure/ai-services/authentication#authenticate-with-a-foundry-resource-key)
 
 ## Getting Started
 1. Import these notebooks into your Databricks workspace using Databricks Git folders.  Clone this repository to your GitHub account and add it in Databricks via Git folders. For details, see [Azure Databricks Git folders](https://learn.microsoft.com/en-us/azure/databricks/repos/).
