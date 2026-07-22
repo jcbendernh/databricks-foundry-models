@@ -40,7 +40,7 @@ For more on this topic, check out [Deploy Microsoft Foundry Models in the Foundr
 For more on this topic, check out [Authenticate with a Foundry resource key](https://learn.microsoft.com/en-us/azure/ai-services/authentication#authenticate-with-a-foundry-resource-key)
 
 ## Getting Started
-1. Import these notebooks into your Databricks workspace using Databricks Git folders.  Clone this repository to your GitHub account and add it in Databricks via Git folders.<BR>
+1. Clone this repository to your GitHub account and add import these notebooks into your Databricks workspace using Databricks Git folders. <BR>
 For more on this topic, check out [Azure Databricks Git folders](https://learn.microsoft.com/en-us/azure/databricks/repos/).
 2. Update the notebook settings with your own deployed model details (deployment name, endpoint, API version, and authentication values).
 
