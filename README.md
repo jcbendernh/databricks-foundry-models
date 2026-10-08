@@ -39,7 +39,7 @@ For more on this topic, check out [Deploy Microsoft Foundry Models in the Foundr
 - API key authentication enabled in Azure AI Foundry.<BR>
 For more on this topic, check out [Authenticate with a Foundry resource key](https://learn.microsoft.com/en-us/azure/ai-services/authentication#authenticate-with-a-foundry-resource-key)
 
-### 3) [Call Foundry Model from AI Gateway Provider](src/Call%20Foundry%20Model%20from%20AI%20Gateway%20Provider.ipynb)
+### 3) Call Foundry Model from AI Gateway Provider
 This notebook calls a Microsoft Foundry model through Databricks AI Gateway using a model provider service and the OpenAI SDK.
 
 Authentication to Databricks uses the notebook's built-in session token, so no credentials are hardcoded in the notebook. The provider service routes the request to the Foundry deployment using Azure service credentials.
