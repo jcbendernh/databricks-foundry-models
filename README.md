@@ -35,8 +35,7 @@ Prerequisites:
 - A Databricks-backed secret scope that contains the Foundry API key.<BR>
 For more on this topic, check out [Create a Databricks-backed secret scope](https://learn.microsoft.com/en-us/azure/databricks/security/secrets/#create-a-databricks-backed-secret-scope)
 - A deployed model in Azure AI Foundry with a known deployment name and API version.<BR>
-For more on this topic, check out [Deploy Microsoft Foundry Models in the Foundry portal](https://learn.microsoft.com/en-us/azure/foundry/foundry-models/how-to/deploy-foundry-models)
-- API key authentication enabled in Azure AI Foundry.<BR>
+For more on this topicNOTE:  This is only needed for the Register Foundry Model - API/Resource Key example<BR>
 For more on this topic, check out [Authenticate with a Foundry resource key](https://learn.microsoft.com/en-us/azure/ai-services/authentication#authenticate-with-a-foundry-resource-key)
 
 ### 3) Call Foundry Model from AI Gateway Provider
