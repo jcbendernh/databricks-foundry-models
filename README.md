@@ -3,7 +3,7 @@
 ## Overview
 There has been much discussion of being able to call AI Foundry models from Azure Databricks.  The reason for this is that there may be a model deployed in AI Foundry that is not listed as a registered model within Unity Catalog. 
 
-This repository demonstrates two ways to call deployed Azure AI Foundry models from Azure Databricks.
+This repository demonstrates three ways to call deployed Azure AI Foundry models from Azure Databricks.
 
 ## Notebooks
 
@@ -38,6 +38,16 @@ For more on this topic, check out [Create a Databricks-backed secret scope](http
 For more on this topic, check out [Deploy Microsoft Foundry Models in the Foundry portal](https://learn.microsoft.com/en-us/azure/foundry/foundry-models/how-to/deploy-foundry-models)
 - API key authentication enabled in Azure AI Foundry.<BR>
 For more on this topic, check out [Authenticate with a Foundry resource key](https://learn.microsoft.com/en-us/azure/ai-services/authentication#authenticate-with-a-foundry-resource-key)
+
+### 3) [Call Foundry Model from AI Gateway Provider](src/Call%20Foundry%20Model%20from%20AI%20Gateway%20Provider.ipynb)
+This notebook calls a Microsoft Foundry model through Databricks AI Gateway using a model provider service and the OpenAI SDK.
+
+Authentication to Databricks uses the notebook's built-in session token, so no credentials are hardcoded in the notebook. The provider service routes the request to the Foundry deployment using Azure service credentials.
+
+Prerequisites:
+- A model deployed in Microsoft Foundry.
+- A Databricks model provider service configured with Azure service credentials.<BR>
+For more on this topic, check out [Create model provider services with Azure service credentials](https://learn.microsoft.com/en-us/azure/databricks/ai-gateway/create-model-provider-services#azure-service-credential).
 
 ## Getting Started
 1. Clone this repository to your GitHub account and add import these notebooks into your Databricks workspace using Databricks Git folders. <BR>
