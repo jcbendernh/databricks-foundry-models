@@ -54,6 +54,6 @@ For more on this topic, check out [Azure Databricks Git folders](https://learn.m
 2. Update the notebook settings with your own deployed model details (deployment name, endpoint, API version, and authentication values).
 
 ## Example Model in This Repo
-The examples were originally authored using a `gpt-5.6-luna` deployed model within AI Foundry.
+The examples were originally authored using a `gpt-6-luna` deployed model within AI Foundry.
 
 You should deploy a model in your own Azure AI Foundry project and replace the sample values with your environment-specific details.
